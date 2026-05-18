@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kayen — Preview Opción 1 × Tipografía Kangen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  @font-face {
+    font-family: 'Kangen';
+    src: url('../../../../kangen.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+</style>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --crema:    #F5EFE0;
+  --dulce:    #C67B3A;
+  --espresso: #2D1F14;
+  --arena:    #E8D5B5;
+  --siena:    #9C5A22;
+}
+
+body {
+  background: #1A1410;
+  font-family: 'Kangen', 'Cormorant Garamond', Georgia, serif;
+  color: var(--crema);
+  min-height: 100vh;
+}
+
+/* ── HEADER ── */
+.header {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(200,165,120,0.2);
+}
+.label {
+  font-family: -apple-system, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  color: rgba(245,239,224,0.45);
+  text-transform: uppercase;
+}
+.badge {
+  font-family: -apple-system, sans-serif;
+  font-size: 0.7rem;
+  background: var(--dulce);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.05em;
+}
+
+/* ── HERO LOGO ── */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px 60px;
+  text-align: center;
+  border-bottom: 1px solid rgba(200,165,120,0.15);
+}
+.hero-eyebrow {
+  font-family: -apple-system, sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  color: var(--dulce);
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+.logo-kayen {
+  font-family: 'Kangen', 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(72px, 14vw, 160px);
+  font-weight: 700;
+  color: var(--crema);
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+}
+.logo-kayen em {
+  font-style: italic;
+  color: var(--arena);
+}
+.logo-rule {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 20px 0 16px;
+  width: 320px;
+}
+.logo-rule-line { flex: 1; height: 1px; background: var(--dulce); opacity: 0.6; }
+.logo-rule-diamond {
+  width: 6px; height: 6px;
+  background: var(--dulce);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+.logo-descriptor {
+  font-family: -apple-system, sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.32em;
+  color: var(--arena);
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+/* ── VARIANTS GRID ── */
+.section {
+  padding: 60px 40px;
+  border-bottom: 1px solid rgba(200,165,120,0.12);
+}
+.section-title {
+  font-family: -apple-system, sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  color: var(--dulce);
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+.variants-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+.variant {
+  padding: 48px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+  min-height: 200px;
+}
+.v1 { background: var(--espresso); }
+.v2 { background: var(--crema); }
+.v3 { background: var(--dulce); }
+
+.v-logo { font-family: 'Kangen', Georgia, serif; font-weight: 700; font-size: 2.6rem; letter-spacing: 0.04em; line-height: 1; }
+.v-sub  { font-family: -apple-system, sans-serif; font-size: 0.55rem; letter-spacing: 0.26em; text-transform: uppercase; opacity: 0.65; margin-top: 6px; }
+.v-rule { width: 60px; height: 1px; }
+
+/* ── LOCKUP VARIATIONS ── */
+.lockups-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+.lockup {
+  padding: 48px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+}
+.l1 { background: var(--crema); }
+.l2 { background: #1C1208; }
+.l3 { background: var(--arena); }
+.l4 { background: var(--siena); }
+
+/* lockup 1 — horizontal stacked */
+.lockup-h { text-align: center; }
+.lockup-h .k { font-family: 'Kangen', Georgia, serif; font-weight: 700; font-size: 3.4rem; color: var(--espresso); letter-spacing: 0.06em; line-height: 1; }
+.lockup-h .sep { width: 120px; height: 1px; background: var(--dulce); margin: 10px auto; }
+.lockup-h .d { font-family: -apple-system, sans-serif; font-size: 0.55rem; letter-spacing: 0.28em; color: var(--siena); text-transform: uppercase; }
+
+/* lockup 2 — italic centered */
+.lockup-i { text-align: center; }
+.lockup-i .k { font-family: 'Kangen', Georgia, serif; font-weight: 600; font-style: italic; font-size: 4rem; color: var(--crema); letter-spacing: 0.02em; }
+.lockup-i .d { font-family: -apple-system, sans-serif; font-size: 0.52rem; letter-spacing: 0.3em; color: var(--arena); text-transform: uppercase; margin-top: 6px; }
+
+/* lockup 3 — badge */
+.lockup-b {
+  display: flex; align-items: center; justify-content: center;
+  width: 170px; height: 170px;
+  border: 1.5px solid var(--espresso);
+  border-radius: 50%;
+  flex-direction: column;
+  gap: 4px;
+}
+.lockup-b .k { font-family: 'Kangen', Georgia, serif; font-weight: 700; font-size: 2.8rem; color: var(--espresso); letter-spacing: 0.06em; }
+.lockup-b .d { font-family: -apple-system, sans-serif; font-size: 0.5rem; letter-spacing: 0.22em; color: var(--siena); text-transform: uppercase; }
+.lockup-b .dots { display:flex; gap:5px; align-items:center; }
+.lockup-b .dot { width:3px; height:3px; border-radius:50%; background:var(--dulce); }
+
+/* lockup 4 — inline left-bar */
+.lockup-lb { display:flex; align-items:center; gap:16px; }
+.lockup-lb .bar { width: 3px; height: 70px; background: var(--crema); border-radius:2px; }
+.lockup-lb .text .k { font-family: 'Kangen', Georgia, serif; font-weight: 700; font-size: 2.8rem; color: var(--crema); letter-spacing: 0.05em; line-height:1; }
+.lockup-lb .text .d { font-family: -apple-system, sans-serif; font-size: 0.52rem; letter-spacing: 0.24em; color: rgba(245,239,224,0.6); text-transform:uppercase; margin-top:5px; }
+
+/* ── PALETTE STRIP ── */
+.palette-section {
+  padding: 60px 40px;
+  border-bottom: 1px solid rgba(200,165,120,0.12);
+}
+.swatches-row { display: flex; gap: 0; height: 80px; border-radius: 8px; overflow: hidden; }
+.sw { flex: 1; position: relative; }
+.sw-label {
+  position: absolute; bottom: 8px; left: 10px;
+  font-family: -apple-system, sans-serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.05em;
+  opacity: 0.75;
+}
+
+/* ── TYPOGRAPHY SPECIMEN ── */
+.typo-section {
+  padding: 60px 40px;
+}
+.typo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 24px; }
+.typo-block { padding: 32px; background: rgba(255,255,255,0.03); border: 1px solid rgba(200,165,120,0.15); border-radius: 8px; }
+.typo-block .specimen { font-family: 'Kangen', Georgia, serif; font-size: 3.2rem; font-weight: 700; color: var(--crema); line-height: 1; margin-bottom: 12px; }
+.typo-block .specimen.italic { font-style: italic; color: var(--arena); }
+.typo-block .typo-name { font-family: -apple-system, sans-serif; font-size: 0.65rem; letter-spacing: 0.12em; color: var(--dulce); text-transform: uppercase; margin-bottom: 4px; }
+.typo-block .typo-desc { font-family: -apple-system, sans-serif; font-size: 0.72rem; color: rgba(245,239,224,0.5); line-height: 1.5; }
+
+/* ── MOCKUP CARD ── */
+.mockup-section {
+  padding: 60px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  border-top: 1px solid rgba(200,165,120,0.12);
+}
+.card-mockup {
+  background: var(--crema);
+  border-radius: 12px;
+  padding: 32px;
+  aspect-ratio: 1.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-mockup .logo-sm { font-family: 'Kangen', Georgia, serif; font-weight: 700; font-size: 1.8rem; color: var(--espresso); letter-spacing: 0.08em; }
+.card-mockup .contact { font-family: -apple-system, sans-serif; font-size: 0.65rem; color: var(--siena); line-height: 2; }
+.card-mockup .role { font-family: -apple-system, sans-serif; font-size: 0.6rem; letter-spacing: 0.12em; color: rgba(45,31,20,0.5); text-transform: uppercase; }
+
+.envelope-mockup {
+  background: var(--espresso);
+  border-radius: 12px;
+  padding: 32px;
+  aspect-ratio: 1.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(200,165,120,0.2);
+}
+.envelope-mockup .k { font-family: 'Kangen', Georgia, serif; font-weight: 700; font-size: 3.5rem; color: var(--crema); letter-spacing: 0.12em; }
+.envelope-mockup .d { font-family: -apple-system, sans-serif; font-size: 0.55rem; letter-spacing: 0.28em; color: var(--dulce); text-transform: uppercase; }
+.envelope-mockup .rule { width: 80px; height: 1px; background: rgba(198,123,58,0.4); }
+
+/* ── FOOTER ── */
+.footer {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(200,165,120,0.12);
+}
+.footer .note { font-family: -apple-system, sans-serif; font-size: 0.65rem; color: rgba(245,239,224,0.3); }
+
+@media (max-width: 700px) {
+  .variants-grid { grid-template-columns: 1fr; }
+  .lockups-grid { grid-template-columns: 1fr; }
+  .typo-grid { grid-template-columns: 1fr; }
+  .mockup-section { grid-template-columns: 1fr; }
+  .logo-kayen { font-size: 18vw; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="label">Kayen · Opción 1 × Tipografía Kangen</div>
+  <div class="badge">TIERRA CALIENTE</div>
+</div>
+
+<!-- HERO LOGO -->
+<div class="hero">
+  <div class="hero-eyebrow">Kayen · Identidad Visual B2B</div>
+  <div class="logo-kayen">Kayen</div>
+  <div class="logo-rule">
+    <div class="logo-rule-line"></div>
+    <div class="logo-rule-diamond"></div>
+    <div class="logo-rule-line"></div>
+  </div>
+  <div class="logo-descriptor">Helados Artesanales · Proveedor B2B</div>
+</div>
+
+<!-- COLOR VARIANTS -->
+<div class="section">
+  <div class="section-title">Variantes sobre color</div>
+  <div class="variants-grid">
+
+    <div class="variant v1">
+      <div class="v-logo" style="color: var(--crema);">Kayen</div>
+      <div class="v-rule" style="background: var(--dulce);"></div>
+      <div class="v-sub" style="color: var(--arena);">helados artesanales</div>
+    </div>
+
+    <div class="variant v2">
+      <div class="v-logo" style="color: var(--espresso);">Kayen</div>
+      <div class="v-rule" style="background: var(--dulce);"></div>
+      <div class="v-sub" style="color: var(--siena);">helados artesanales</div>
+    </div>
+
+    <div class="variant v3">
+      <div class="v-logo" style="color: var(--crema);">Kayen</div>
+      <div class="v-rule" style="background: var(--espresso);"></div>
+      <div class="v-sub" style="color: var(--espresso);">helados artesanales</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- LOCKUP VARIATIONS -->
+<div class="section">
+  <div class="section-title">Variaciones de lockup</div>
+  <div class="lockups-grid">
+
+    <!-- Lockup 1: Stacked sobre crema -->
+    <div class="lockup l1">
+      <div class="lockup-h">
+        <div class="k">KAYEN</div>
+        <div class="sep"></div>
+        <div class="d">Helados Artesanales · B2B</div>
+      </div>
+    </div>
+
+    <!-- Lockup 2: Italic sobre oscuro -->
+    <div class="lockup l2">
+      <div class="lockup-i">
+        <div class="k">Kayen</div>
+        <div class="d">Heladería Artesanal</div>
+      </div>
+    </div>
+
+    <!-- Lockup 3: Badge circular -->
+    <div class="lockup l3">
+      <div class="lockup-b">
+        <div class="k">K</div>
+        <div class="dots">
+          <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        </div>
+        <div class="d">Kayen · Helados</div>
+      </div>
+    </div>
+
+    <!-- Lockup 4: Left bar sobre siena -->
+    <div class="lockup l4">
+      <div class="lockup-lb">
+        <div class="bar"></div>
+        <div class="text">
+          <div class="k">Kayen</div>
+          <div class="d">Heladería Artesanal</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- PALETTE -->
+<div class="palette-section">
+  <div class="section-title">Paleta · Tierra Caliente</div>
+  <div class="swatches-row">
+    <div class="sw" style="background:#F5EFE0;">
+      <div class="sw-label" style="color:#2D1F14;">#F5EFE0<br>Crema Mazorca</div>
+    </div>
+    <div class="sw" style="background:#E8D5B5;">
+      <div class="sw-label" style="color:#2D1F14;">#E8D5B5<br>Arena</div>
+    </div>
+    <div class="sw" style="background:#C67B3A;">
+      <div class="sw-label" style="color:#F5EFE0;">#C67B3A<br>Dulce de Leche</div>
+    </div>
+    <div class="sw" style="background:#9C5A22;">
+      <div class="sw-label" style="color:#F5EFE0;">#9C5A22<br>Siena</div>
+    </div>
+    <div class="sw" style="background:#2D1F14;">
+      <div class="sw-label" style="color:#E8D5B5;">#2D1F14<br>Espresso</div>
+    </div>
+  </div>
+</div>
+
+<!-- TYPOGRAPHY SPECIMEN -->
+<div class="typo-section">
+  <div class="section-title">Tipografía · Kangen — Perfectype Studio</div>
+  <div class="typo-grid">
+    <div class="typo-block">
+      <div class="typo-name">Display · Bold Upright</div>
+      <div class="specimen">Kayen</div>
+      <div class="typo-desc">Uso principal: logo, hero, titulares grandes. Alto contraste entre finos y gruesos — la identidad visual de Kangen.</div>
+    </div>
+    <div class="typo-block">
+      <div class="typo-name">Display · Italic</div>
+      <div class="specimen italic">Kayen</div>
+      <div class="typo-desc">Uso: taglines, citas, énfasis elegante. La cursiva agrega movimiento sin perder la jerarquía premium del serif.</div>
+    </div>
+    <div class="typo-block">
+      <div class="typo-name">Display · UPPERCASE</div>
+      <div class="specimen" style="letter-spacing:0.18em; font-size:2.4rem;">KAYEN</div>
+      <div class="typo-desc">Uso: nombres de producto, categorías, packaging. El espaciado amplio equilibra el peso del bold.</div>
+    </div>
+    <div class="typo-block">
+      <div class="typo-name">Body · Light</div>
+      <div class="specimen" style="font-weight:300; font-size:1.4rem; line-height:1.6; color: rgba(245,239,224,0.7);">
+        Helados elaborados con ingredientes seleccionados. Calidad artesanal para tu negocio.
+      </div>
+      <div class="typo-desc">Uso: descripciones, cuerpo de texto, catálogo. El Light contrasta perfectamente con el Bold del logo.</div>
+    </div>
+  </div>
+</div>
+
+<!-- MOCKUPS -->
+<div class="mockup-section">
+
+  <div class="card-mockup">
+    <div>
+      <div class="logo-sm">Kayen</div>
+      <div style="width:60px; height:1px; background:var(--dulce); margin:8px 0;"></div>
+    </div>
+    <div>
+      <div class="role">Gerente Comercial</div>
+      <div style="height:6px;"></div>
+      <div class="contact">
+        nombre@kayen.com<br>
+        +54 9 11 XXXX XXXX<br>
+        kayen.com.ar
+      </div>
+    </div>
+  </div>
+
+  <div class="envelope-mockup">
+    <div class="k">Kayen</div>
+    <div class="rule"></div>
+    <div class="d">Helados Artesanales · B2B</div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="note">Kayen · Design Research 2026 · Opción 1 — Tierra Caliente × Kangen</div>
+  <div class="note">Tipografía: Kangen OTF · Perfectype Studio</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir)",
+      "Bash(git config *)",
+      "Bash(git init *)",
+      "Bash(git remote *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git branch *)",
+      "Bash(git push *)",
+      "Bash(npm install *)",
+      "Skill(lazyweb:lazyweb-design-research)",
+      "Skill(lazyweb:lazyweb-design-research:*)",
+      "WebFetch(domain:worldbranddesign.com)",
+      "WebFetch(domain:thecolorpalettestudio.com)",
+      "WebFetch(domain:www.mikeadv.com)",
+      "WebFetch(domain:zulbera.com)",
+      "WebFetch(domain:www.pentagram.com)",
+      "WebSearch",
+      "Bash(start \"\" \"C:/Users/churr/OneDrive/Desktop/Visual Studio/projects/Kayen/.lazyweb/design-research/heladeria-b2b-kayen-2026-05-18/report.html\")",
+      "Bash(start \"\" \"C:/Users/churr/OneDrive/Desktop/Visual Studio/projects/Kayen/.lazyweb/design-research/heladeria-b2b-kayen-2026-05-18/preview-opcion1-kangen.html\")",
+      "Skill(lazyweb:lazyweb-design-improve)",
+      "Skill(lazyweb:lazyweb-design-improve:*)",
+      "Bash(npx tsc *)",
+      "Bash(Copy-Item \"c:\\\\Users\\\\churr\\\\OneDrive\\\\Desktop\\\\Visual Studio\\\\projects\\\\Kayen\\\\FUTURA LIGHT BT.TTF\" \"c:\\\\Users\\\\churr\\\\OneDrive\\\\Desktop\\\\Visual Studio\\\\projects\\\\Kayen\\\\futura-light.ttf\")"
+    ]
+  },
+  "comment": "Configuración local del usuario - No versionar en git"
+}

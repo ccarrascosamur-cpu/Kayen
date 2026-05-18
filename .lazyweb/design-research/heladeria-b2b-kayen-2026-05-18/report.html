@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design Research: Heladerías B2B — Rebrand Kayen</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: #F9F7F4;
+    color: #1A1A1A;
+    line-height: 1.65;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+  h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+  h2 { font-size: 1.3rem; font-weight: 700; margin: 48px 0 16px; letter-spacing: -0.01em; border-bottom: 2px solid #E5E0D8; padding-bottom: 8px; }
+  h3 { font-size: 1.1rem; font-weight: 600; margin: 32px 0 12px; }
+  p { margin-bottom: 12px; color: #333; }
+  .meta { font-size: 0.85rem; color: #888; margin-bottom: 40px; }
+  .tldr {
+    background: #EEF4F8;
+    border-left: 4px solid #3D5C6E;
+    padding: 20px 24px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 40px;
+    font-size: 1.05rem;
+  }
+  .tldr strong { color: #1A2B35; }
+
+  /* Option Cards */
+  .options-grid { display: grid; gap: 24px; margin-top: 24px; }
+  .option-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .option-card:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+  .option-header {
+    padding: 28px 28px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .option-number {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+  .option-title { font-size: 1.2rem; font-weight: 700; }
+  .option-subtitle { font-size: 0.85rem; opacity: 0.7; margin-top: 2px; }
+  .option-body { padding: 0 28px 28px; }
+
+  /* Color Swatches */
+  .palette { display: flex; gap: 8px; margin: 16px 0; flex-wrap: wrap; }
+  .swatch {
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    font-size: 0.72rem; color: #666; text-align: center;
+  }
+  .swatch-circle {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .swatch-name { font-weight: 500; font-size: 0.7rem; line-height: 1.2; }
+  .swatch-hex { font-family: monospace; font-size: 0.65rem; color: #999; }
+
+  /* Logo Preview */
+  .logo-preview {
+    border-radius: 12px;
+    padding: 32px 24px;
+    margin: 16px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    min-height: 120px;
+  }
+  .logo-name { letter-spacing: 0.08em; }
+  .logo-descriptor { font-size: 0.65rem; letter-spacing: 0.2em; opacity: 0.6; margin-top: 4px; }
+
+  /* Typography Tag */
+  .typo-tag {
+    display: inline-block;
+    background: #F0EDE8;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin: 4px 4px 4px 0;
+    color: #555;
+  }
+
+  /* Premium Meter */
+  .premium-meter { margin: 16px 0 8px; }
+  .premium-label { font-size: 0.78rem; color: #888; margin-bottom: 6px; }
+  .meter-bar { background: #E8E4DC; border-radius: 4px; height: 6px; overflow: hidden; }
+  .meter-fill { height: 100%; border-radius: 4px; }
+  .meter-ticks { display: flex; justify-content: space-between; font-size: 0.65rem; color: #bbb; margin-top: 4px; }
+
+  /* Recommendation */
+  .rec-badge {
+    display: inline-block;
+    background: #8A9E7E;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  /* Refs section */
+  .ref-card {
+    background: white;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    border-left: 3px solid #D4C5A9;
+  }
+  .ref-card h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
+  .ref-card p { font-size: 0.85rem; color: #555; margin: 0; }
+
+  /* Patterns */
+  .pattern-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+  .pattern-box {
+    background: white;
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .pattern-box h4 { font-size: 0.85rem; font-weight: 700; color: #444; margin-bottom: 8px; }
+  .pattern-box ul { padding-left: 16px; }
+  .pattern-box li { font-size: 0.83rem; color: #555; margin-bottom: 5px; }
+  .good h4 { color: #3B6B35; }
+  .bad h4 { color: #8B3535; }
+
+  /* Divider */
+  .divider { border: none; border-top: 1px solid #E5E0D8; margin: 40px 0; }
+
+  /* Source list */
+  .sources { font-size: 0.8rem; }
+  .sources a { color: #3D5C6E; text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .sources li { margin-bottom: 6px; }
+
+  @media (max-width: 600px) {
+    .pattern-grid { grid-template-columns: 1fr; }
+    .palette { gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Heladerías B2B — Rebrand Kayen</h1>
+<p class="meta">Research de diseño · 2026-05-18 · Referencias mundiales + 5 propuestas de dirección visual</p>
+
+<div class="tldr">
+  <strong>TL;DR:</strong> Las mejores marcas B2B de helados evitan dos extremos: ni pastelería infantil ni lujo frío inaccesible. El sweet spot es <strong>"crafted confidence"</strong> — materiales cálidos, tipografía con carácter, paleta contenida (2-3 colores máx). Kayen necesita verse seria en una reunión de negocios pero tener alma cuando aparece en una heladera o packaging.
+</div>
+
+<!-- ============================
+     OPCIÓN 1: TIERRA CALIENTE
+     ============================ -->
+<h2>5 Propuestas de Dirección Visual</h2>
+
+<div class="options-grid">
+
+  <!-- OPCIÓN 1 -->
+  <div class="option-card">
+    <div class="option-header" style="background: #F5EFE0;">
+      <div class="option-number" style="background:#C67B3A; color:white;">1</div>
+      <div>
+        <div class="option-title">TIERRA CALIENTE</div>
+        <div class="option-subtitle">Artesanal Mediterráneo — Cálido, experto, con raíces</div>
+      </div>
+    </div>
+    <div class="option-body">
+      <div class="palette">
+        <div class="swatch"><div class="swatch-circle" style="background:#F5EFE0;"></div><span class="swatch-name">Crema Mazorca</span><span class="swatch-hex">#F5EFE0</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#C67B3A;"></div><span class="swatch-name">Dulce de Leche</span><span class="swatch-hex">#C67B3A</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#2D1F14;"></div><span class="swatch-name">Espresso</span><span class="swatch-hex">#2D1F14</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#E8D5B5;"></div><span class="swatch-name">Arena</span><span class="swatch-hex">#E8D5B5</span></div>
+      </div>
+
+      <div class="logo-preview" style="background:#2D1F14;">
+        <div class="logo-name" style="font-family: Georgia, 'Times New Roman', serif; font-size: 2.2rem; font-weight: 700; color: #F5EFE0; letter-spacing: 0.12em;">KAYEN</div>
+        <div style="width: 120px; height: 1px; background: #C67B3A; margin: 8px 0;"></div>
+        <div class="logo-descriptor" style="color:#E8D5B5; font-size:0.65rem; letter-spacing:0.25em;">HELADOS ARTESANALES</div>
+      </div>
+
+      <div>
+        <span class="typo-tag">Display: Cormorant Garamond</span>
+        <span class="typo-tag">Alternativa: Playfair Display</span>
+        <span class="typo-tag">Apoyo: Libre Baskerville</span>
+      </div>
+
+      <div class="premium-meter">
+        <div class="premium-label">Premium ←→ Approachable</div>
+        <div class="meter-bar"><div class="meter-fill" style="width:80%; background: linear-gradient(90deg, #C67B3A, #E8D5B5);"></div></div>
+        <div class="meter-ticks"><span>Artesanal</span><span>●</span><span>Luxury</span></div>
+      </div>
+      <p style="font-size:0.82rem; color:#666; margin-top:8px;">Ideal para restaurantes y hoteles boutique. Sugiere tradición sin ser anticuado.</p>
+    </div>
+  </div>
+
+  <!-- OPCIÓN 2 -->
+  <div class="option-card">
+    <div class="option-header" style="background: #E8EEF2;">
+      <div class="option-number" style="background:#3D5C6E; color:white;">2</div>
+      <div>
+        <div class="option-title">GLACIAR AUSTRAL</div>
+        <div class="option-subtitle">Nordic Moderno — Profesional, preciso, confiable</div>
+      </div>
+    </div>
+    <div class="option-body">
+      <div class="palette">
+        <div class="swatch"><div class="swatch-circle" style="background:#F8F8F6; border: 1px solid #ddd;"></div><span class="swatch-name">Nieve</span><span class="swatch-hex">#F8F8F6</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#3D5C6E;"></div><span class="swatch-name">Glaciar</span><span class="swatch-hex">#3D5C6E</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#1A2B35;"></div><span class="swatch-name">Profundidad</span><span class="swatch-hex">#1A2B35</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#9BBFC9;"></div><span class="swatch-name">Hielo</span><span class="swatch-hex">#9BBFC9</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#E8E4DC;"></div><span class="swatch-name">Cuarzo</span><span class="swatch-hex">#E8E4DC</span></div>
+      </div>
+
+      <div class="logo-preview" style="background:#F8F8F6; border: 1px solid #E8E4DC;">
+        <div class="logo-name" style="font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; font-size: 2rem; font-weight: 300; color: #1A2B35; letter-spacing: 0.35em;">KAYEN</div>
+        <div style="width: 80px; height: 1px; background: #3D5C6E; margin: 10px 0;"></div>
+        <div class="logo-descriptor" style="color:#3D5C6E; font-size:0.65rem; letter-spacing:0.25em; font-weight:500;">HELADERÍA B2B</div>
+      </div>
+
+      <div>
+        <span class="typo-tag">Display: DM Sans / Neue Haas Grotesk</span>
+        <span class="typo-tag">Alternativa: Inter Display</span>
+      </div>
+
+      <div class="premium-meter">
+        <div class="premium-label">Premium ←→ Approachable</div>
+        <div class="meter-bar"><div class="meter-fill" style="width:60%; background: linear-gradient(90deg, #3D5C6E, #9BBFC9);"></div></div>
+        <div class="meter-ticks"><span>Artesanal</span><span>●</span><span>Luxury</span></div>
+      </div>
+      <p style="font-size:0.82rem; color:#666; margin-top:8px;">Ideal para distribuidores, supermercados, food service. Máxima credibilidad B2B.</p>
+    </div>
+  </div>
+
+  <!-- OPCIÓN 3 -->
+  <div class="option-card">
+    <div class="option-header" style="background: #1C2821;">
+      <div class="option-number" style="background:#C9A84C; color:#1C2821; font-weight:900;">3</div>
+      <div>
+        <div class="option-title" style="color:#F5E6C8;">NOCHE DE VAINILLA</div>
+        <div class="option-subtitle" style="color:#C9A84C;">Dark Luxury — Selecta, sofisticada, exclusiva</div>
+      </div>
+    </div>
+    <div class="option-body">
+      <div class="palette">
+        <div class="swatch"><div class="swatch-circle" style="background:#1C2821;"></div><span class="swatch-name">Selva Oscura</span><span class="swatch-hex">#1C2821</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#F5E6C8;"></div><span class="swatch-name">Vainilla Bourbon</span><span class="swatch-hex">#F5E6C8</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#C9A84C;"></div><span class="swatch-name">Oro Viejo</span><span class="swatch-hex">#C9A84C</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#E8E0D0;"></div><span class="swatch-name">Pergamino</span><span class="swatch-hex">#E8E0D0</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#2F3D35;"></div><span class="swatch-name">Verde Botella</span><span class="swatch-hex">#2F3D35</span></div>
+      </div>
+
+      <div class="logo-preview" style="background:#1C2821;">
+        <div class="logo-name" style="font-family: Georgia, 'Times New Roman', serif; font-size: 2.4rem; font-weight: 400; font-style: italic; color: #F5E6C8; letter-spacing: 0.06em;">Kayen</div>
+        <div style="display:flex; align-items:center; gap:8px; margin: 8px 0;">
+          <div style="width: 40px; height: 1px; background: #C9A84C;"></div>
+          <div style="width: 6px; height: 6px; background:#C9A84C; border-radius:50%;"></div>
+          <div style="width: 40px; height: 1px; background: #C9A84C;"></div>
+        </div>
+        <div class="logo-descriptor" style="color:#C9A84C; font-size:0.6rem; letter-spacing:0.3em;">HELADOS · DESDE 20XX</div>
+      </div>
+
+      <div>
+        <span class="typo-tag">Display: Freight Display Pro Italic</span>
+        <span class="typo-tag">Alternativa: Editorial New</span>
+        <span class="typo-tag">Apoyo: Monument Grotesk</span>
+      </div>
+
+      <div class="premium-meter">
+        <div class="premium-label">Premium ←→ Approachable</div>
+        <div class="meter-bar"><div class="meter-fill" style="width:95%; background: linear-gradient(90deg, #C9A84C, #F5E6C8);"></div></div>
+        <div class="meter-ticks"><span>Artesanal</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;●</span><span>Luxury</span></div>
+      </div>
+      <p style="font-size:0.82rem; color:#666; margin-top:8px;">Ideal para restaurantes de alta cocina, hoteles 5*, posicionamiento premium máximo. Riesgo: puede sentirse distante.</p>
+    </div>
+  </div>
+
+  <!-- OPCIÓN 4 - RECOMENDADA -->
+  <div class="option-card" style="border: 2px solid #8A9E7E;">
+    <div class="option-header" style="background: #F0EBE0;">
+      <div class="option-number" style="background:#8A9E7E; color:white;">4</div>
+      <div>
+        <div class="option-title">DULCE CRUDO</div>
+        <div class="option-subtitle">Orgánico Natural — Tendencia 2025, honesto, diferenciador</div>
+      </div>
+    </div>
+    <div class="option-body">
+      <div class="rec-badge">★ RECOMENDACIÓN PRINCIPAL</div>
+      <div class="palette">
+        <div class="swatch"><div class="swatch-circle" style="background:#F0EBE0; border: 1px solid #ddd;"></div><span class="swatch-name">Lino</span><span class="swatch-hex">#F0EBE0</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#8A9E7E;"></div><span class="swatch-name">Salvia</span><span class="swatch-hex">#8A9E7E</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#5C4033;"></div><span class="swatch-name">Cacao</span><span class="swatch-hex">#5C4033</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#D4C5A9;"></div><span class="swatch-name">Avena</span><span class="swatch-hex">#D4C5A9</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#3B4A3C;"></div><span class="swatch-name">Bosque</span><span class="swatch-hex">#3B4A3C</span></div>
+      </div>
+
+      <div class="logo-preview" style="background:#F0EBE0;">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="width: 36px; height: 36px; border-radius:50%; border: 1.5px solid #8A9E7E; display:flex; align-items:center; justify-content:center;">
+            <div style="width: 18px; height: 18px; border-radius:50%; background:#8A9E7E;"></div>
+          </div>
+          <div class="logo-name" style="font-family: Georgia, serif; font-size: 2rem; font-weight: 700; color: #3B4A3C; letter-spacing: 0.05em;">KAYEN</div>
+        </div>
+        <div style="width: 100px; height: 1px; background: #D4C5A9; margin: 10px 0;"></div>
+        <div class="logo-descriptor" style="color:#8A9E7E; font-size:0.65rem; letter-spacing:0.2em;">HELADERÍA ARTESANAL</div>
+      </div>
+
+      <div>
+        <span class="typo-tag">Display: Fraunces Display ★</span>
+        <span class="typo-tag">Alternativa: Lora SemiBold</span>
+        <span class="typo-tag">Apoyo: Nunito Sans</span>
+      </div>
+
+      <div class="premium-meter">
+        <div class="premium-label">Premium ←→ Approachable</div>
+        <div class="meter-bar"><div class="meter-fill" style="width:72%; background: linear-gradient(90deg, #8A9E7E, #D4C5A9);"></div></div>
+        <div class="meter-ticks"><span>Artesanal</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;●</span><span>Luxury</span></div>
+      </div>
+      <p style="font-size:0.82rem; color:#666; margin-top:8px;"><strong>Trend 2025-2026.</strong> Earth tones en food B2B. Diferenciador en el mercado local, comunica calidad artesanal sin parecer boutique de lujo inaccesible. Mejor versatilidad cross-segment.</p>
+    </div>
+  </div>
+
+  <!-- OPCIÓN 5 -->
+  <div class="option-card">
+    <div class="option-header" style="background: #F7F3F0;">
+      <div class="option-number" style="background:#D4567A; color:white;">5</div>
+      <div>
+        <div class="option-title">FUCSIA MODERNA</div>
+        <div class="option-subtitle">Bold Contemporáneo — Memorable, valiente, diferenciador</div>
+      </div>
+    </div>
+    <div class="option-body">
+      <div class="palette">
+        <div class="swatch"><div class="swatch-circle" style="background:#F7F3F0; border: 1px solid #ddd;"></div><span class="swatch-name">Marfil</span><span class="swatch-hex">#F7F3F0</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#1A1A1A;"></div><span class="swatch-name">Carbón</span><span class="swatch-hex">#1A1A1A</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#D4567A;"></div><span class="swatch-name">Rosa Frambuesa</span><span class="swatch-hex">#D4567A</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#F2C4CE;"></div><span class="swatch-name">Chicle Suave</span><span class="swatch-hex">#F2C4CE</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#3D3D3D;"></div><span class="swatch-name">Grafito</span><span class="swatch-hex">#3D3D3D</span></div>
+      </div>
+
+      <div class="logo-preview" style="background:#F7F3F0;">
+        <div style="background:#1A1A1A; padding: 10px 28px; border-radius:4px; display:inline-block;">
+          <div class="logo-name" style="font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; font-size: 1.8rem; font-weight: 900; color: #F7F3F0; letter-spacing: 0.05em;">KAYEN</div>
+        </div>
+        <div style="width: 100px; height: 2px; background: #D4567A; margin: 12px 0;"></div>
+        <div class="logo-descriptor" style="color:#3D3D3D; font-size:0.65rem; letter-spacing:0.2em;">B2B HELADOS</div>
+      </div>
+
+      <div>
+        <span class="typo-tag">Display: Syne ExtraBold</span>
+        <span class="typo-tag">Alternativa: Space Grotesk Bold</span>
+      </div>
+
+      <div class="premium-meter">
+        <div class="premium-label">Premium ←→ Approachable</div>
+        <div class="meter-bar"><div class="meter-fill" style="width:68%; background: linear-gradient(90deg, #D4567A, #F2C4CE);"></div></div>
+        <div class="meter-ticks"><span>Artesanal</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;●</span><span>Luxury</span></div>
+      </div>
+      <p style="font-size:0.82rem; color:#666; margin-top:8px;">Máxima diferenciación. Ideal si los clientes B2B son más jóvenes/modernos (cafés de especialidad, restaurants trendy). Riesgo: polariza.</p>
+    </div>
+  </div>
+
+</div>
+
+  <!-- OPCIÓN 6 -->
+  <div class="option-card">
+    <div class="option-header" style="background: #F2E8E4;">
+      <div class="option-number" style="background:#C27B6A; color:white;">6</div>
+      <div>
+        <div class="option-title">ARCILLA ROSA</div>
+        <div class="option-subtitle">Dusty Rose + Clay — Cálido, femenino-neutro, muy tendencia 2025</div>
+      </div>
+    </div>
+    <div class="option-body">
+      <div class="palette">
+        <div class="swatch"><div class="swatch-circle" style="background:#FAF3EE; border:1px solid #ddd;"></div><span class="swatch-name">Porcelana</span><span class="swatch-hex">#FAF3EE</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#C27B6A;"></div><span class="swatch-name">Arcilla Rosa</span><span class="swatch-hex">#C27B6A</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#4A3728;"></div><span class="swatch-name">Tronco</span><span class="swatch-hex">#4A3728</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#E5CEC5;"></div><span class="swatch-name">Piel</span><span class="swatch-hex">#E5CEC5</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#8C6157;"></div><span class="swatch-name">Ladrillo</span><span class="swatch-hex">#8C6157</span></div>
+      </div>
+      <div class="logo-preview" style="background:#FAF3EE;">
+        <div class="logo-name" style="font-family: Georgia, serif; font-size: 2.2rem; font-weight: 400; color: #4A3728; letter-spacing: 0.18em;">KAYEN</div>
+        <div style="display:flex; gap:6px; margin:10px 0;">
+          <div style="width:8px; height:8px; border-radius:50%; background:#C27B6A;"></div>
+          <div style="width:8px; height:8px; border-radius:50%; background:#E5CEC5;"></div>
+          <div style="width:8px; height:8px; border-radius:50%; background:#C27B6A;"></div>
+        </div>
+        <div class="logo-descriptor" style="color:#8C6157; font-size:0.65rem; letter-spacing:0.22em;">HELADERÍA ARTESANAL</div>
+      </div>
+      <div>
+        <span class="typo-tag">Display: Cormorant Infant Light</span>
+        <span class="typo-tag">Alternativa: Canela Deck</span>
+        <span class="typo-tag">Apoyo: Work Sans Light</span>
+      </div>
+      <div class="premium-meter">
+        <div class="premium-label">Premium ←→ Approachable</div>
+        <div class="meter-bar"><div class="meter-fill" style="width:75%; background: linear-gradient(90deg, #C27B6A, #E5CEC5);"></div></div>
+        <div class="meter-ticks"><span>Artesanal</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;●</span><span>Luxury</span></div>
+      </div>
+      <p style="font-size:0.82rem; color:#666; margin-top:8px;">Clay + dusty rose es el combo más fotografiado en 2025. Ideal si hay foco en redes sociales y presencia digital además del B2B.</p>
+    </div>
+  </div>
+
+  <!-- OPCIÓN 7 -->
+  <div class="option-card">
+    <div class="option-header" style="background: linear-gradient(135deg, #FBF0E4 60%, #D9EAE8);">
+      <div class="option-number" style="background:#C4603B; color:white;">7</div>
+      <div>
+        <div class="option-title">MEDITERRÁNEO</div>
+        <div class="option-subtitle">Terracota + Azul Egeo — Vibrante, cálido, evoca origen</div>
+      </div>
+    </div>
+    <div class="option-body">
+      <div class="palette">
+        <div class="swatch"><div class="swatch-circle" style="background:#FBF0E4; border:1px solid #ddd;"></div><span class="swatch-name">Arena</span><span class="swatch-hex">#FBF0E4</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#C4603B;"></div><span class="swatch-name">Terracota</span><span class="swatch-hex">#C4603B</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#2D6A72;"></div><span class="swatch-name">Egeo</span><span class="swatch-hex">#2D6A72</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#F0C87A;"></div><span class="swatch-name">Azafrán</span><span class="swatch-hex">#F0C87A</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#1E3D40;"></div><span class="swatch-name">Profundo</span><span class="swatch-hex">#1E3D40</span></div>
+      </div>
+      <div class="logo-preview" style="background:#FBF0E4;">
+        <div style="display:flex; align-items:center; gap:0;">
+          <div style="width:3px; height:52px; background:#C4603B; border-radius:2px; margin-right:14px;"></div>
+          <div>
+            <div class="logo-name" style="font-family: Georgia, serif; font-size: 2rem; font-weight: 700; color: #1E3D40; letter-spacing: 0.1em;">KAYEN</div>
+            <div class="logo-descriptor" style="color:#2D6A72; font-size:0.65rem; letter-spacing:0.2em; margin-top:4px;">HELADOS · B2B</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <span class="typo-tag">Display: Playfair Display Bold</span>
+        <span class="typo-tag">Alternativa: DM Serif Display</span>
+        <span class="typo-tag">Apoyo: Karla Regular</span>
+      </div>
+      <div class="premium-meter">
+        <div class="premium-label">Premium ←→ Approachable</div>
+        <div class="meter-bar"><div class="meter-fill" style="width:70%; background: linear-gradient(90deg, #C4603B, #2D6A72);"></div></div>
+        <div class="meter-ticks"><span>Artesanal</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;●</span><span>Luxury</span></div>
+      </div>
+      <p style="font-size:0.82rem; color:#666; margin-top:8px;">Dos colores dominantes opuestos en temperatura = máximo contraste visual. Ideal para mercados con fuerte cultura gastronómica mediterránea/latina.</p>
+    </div>
+  </div>
+
+  <!-- OPCIÓN 8 -->
+  <div class="option-card">
+    <div class="option-header" style="background: #EAF4F2;">
+      <div class="option-number" style="background:#2D8B78; color:white;">8</div>
+      <div>
+        <div class="option-title">MENTA OSCURA</div>
+        <div class="option-subtitle">Deep Mint + Chocolate — Fresco, inesperado, muy premium</div>
+      </div>
+    </div>
+    <div class="option-body">
+      <div class="palette">
+        <div class="swatch"><div class="swatch-circle" style="background:#F3F9F7; border:1px solid #ddd;"></div><span class="swatch-name">Bruma</span><span class="swatch-hex">#F3F9F7</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#2D8B78;"></div><span class="swatch-name">Menta Profunda</span><span class="swatch-hex">#2D8B78</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#3D2112;"></div><span class="swatch-name">Chocolate 70%</span><span class="swatch-hex">#3D2112</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#A8D4CB;"></div><span class="swatch-name">Menta Clara</span><span class="swatch-hex">#A8D4CB</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#E8E0D8;"></div><span class="swatch-name">Crema</span><span class="swatch-hex">#E8E0D8</span></div>
+      </div>
+      <div class="logo-preview" style="background:#3D2112;">
+        <div style="border: 1.5px solid #2D8B78; padding: 14px 28px; display:inline-block;">
+          <div class="logo-name" style="font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; font-size: 1.9rem; font-weight: 200; color: #F3F9F7; letter-spacing: 0.4em;">KAYEN</div>
+          <div class="logo-descriptor" style="color:#2D8B78; font-size:0.6rem; letter-spacing:0.28em; margin-top:6px; text-align:center;">HELADERÍA</div>
+        </div>
+      </div>
+      <div>
+        <span class="typo-tag">Display: Neue Montreal Light</span>
+        <span class="typo-tag">Alternativa: Satoshi Regular</span>
+        <span class="typo-tag">Apoyo: Inter Light</span>
+      </div>
+      <div class="premium-meter">
+        <div class="premium-label">Premium ←→ Approachable</div>
+        <div class="meter-bar"><div class="meter-fill" style="width:88%; background: linear-gradient(90deg, #2D8B78, #A8D4CB);"></div></div>
+        <div class="meter-ticks"><span>Artesanal</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;●</span><span>Luxury</span></div>
+      </div>
+      <p style="font-size:0.82rem; color:#666; margin-top:8px;">Nadie en helados B2B usa esta combinación — eso es exactamente su fortaleza. Dark base con menta = premium farmacéutico convertido en gourmet.</p>
+    </div>
+  </div>
+
+  <!-- OPCIÓN 9 -->
+  <div class="option-card">
+    <div class="option-header" style="background: #F7F3ED;">
+      <div class="option-number" style="background:#B8956A; color:white;">9</div>
+      <div>
+        <div class="option-title">CARAMELO NÓRDICO</div>
+        <div class="option-subtitle">Caramel + Warm Gray — Scandi meets confectionery, atemporal</div>
+      </div>
+    </div>
+    <div class="option-body">
+      <div class="palette">
+        <div class="swatch"><div class="swatch-circle" style="background:#F7F3ED; border:1px solid #ddd;"></div><span class="swatch-name">Mantequilla</span><span class="swatch-hex">#F7F3ED</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#B8956A;"></div><span class="swatch-name">Caramelo</span><span class="swatch-hex">#B8956A</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#6B6560;"></div><span class="swatch-name">Gris Cálido</span><span class="swatch-hex">#6B6560</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#2C2825;"></div><span class="swatch-name">Carbón Cálido</span><span class="swatch-hex">#2C2825</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#DDD0BF;"></div><span class="swatch-name">Lino Tostado</span><span class="swatch-hex">#DDD0BF</span></div>
+      </div>
+      <div class="logo-preview" style="background:#F7F3ED;">
+        <div class="logo-name" style="font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; font-size: 2rem; font-weight: 600; color: #2C2825; letter-spacing: 0.06em;">Kayen</div>
+        <div style="width:100%; display:flex; align-items:center; gap:8px; margin: 10px 0;">
+          <div style="flex:1; height:1px; background:#DDD0BF;"></div>
+          <div style="width:5px; height:5px; background:#B8956A; transform:rotate(45deg);"></div>
+          <div style="flex:1; height:1px; background:#DDD0BF;"></div>
+        </div>
+        <div class="logo-descriptor" style="color:#6B6560; font-size:0.65rem; letter-spacing:0.22em;">HELADOS ARTESANALES</div>
+      </div>
+      <div>
+        <span class="typo-tag">Display: Instrument Serif</span>
+        <span class="typo-tag">Alternativa: Fraunces Light Italic</span>
+        <span class="typo-tag">Apoyo: DM Sans Regular</span>
+      </div>
+      <div class="premium-meter">
+        <div class="premium-label">Premium ←→ Approachable</div>
+        <div class="meter-bar"><div class="meter-fill" style="width:78%; background: linear-gradient(90deg, #B8956A, #DDD0BF);"></div></div>
+        <div class="meter-ticks"><span>Artesanal</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;●</span><span>Luxury</span></div>
+      </div>
+      <p style="font-size:0.82rem; color:#666; margin-top:8px;">La paleta más atemporal de todas. En 10 años sigue funcionando. El rombo como elemento decorativo agrega distinción sin complejidad.</p>
+    </div>
+  </div>
+
+  <!-- OPCIÓN 10 -->
+  <div class="option-card">
+    <div class="option-header" style="background: #EEF0F8;">
+      <div class="option-number" style="background:#3D3F8C; color:white;">10</div>
+      <div>
+        <div class="option-title">ÍNDIGO ARTESANAL</div>
+        <div class="option-subtitle">Deep Indigo + Honey — Audaz, inesperado, muy diferenciador</div>
+      </div>
+    </div>
+    <div class="option-body">
+      <div class="palette">
+        <div class="swatch"><div class="swatch-circle" style="background:#F8F6F0; border:1px solid #ddd;"></div><span class="swatch-name">Pergamino</span><span class="swatch-hex">#F8F6F0</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#3D3F8C;"></div><span class="swatch-name">Índigo</span><span class="swatch-hex">#3D3F8C</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#E8A838;"></div><span class="swatch-name">Miel</span><span class="swatch-hex">#E8A838</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#1C1E4A;"></div><span class="swatch-name">Noche</span><span class="swatch-hex">#1C1E4A</span></div>
+        <div class="swatch"><div class="swatch-circle" style="background:#C5C8F0;"></div><span class="swatch-name">Lavanda</span><span class="swatch-hex">#C5C8F0</span></div>
+      </div>
+      <div class="logo-preview" style="background:#1C1E4A;">
+        <div style="display:flex; flex-direction:column; align-items:center;">
+          <div style="display:flex; align-items:center; gap:10px;">
+            <div style="width:30px; height:1px; background:#E8A838;"></div>
+            <div class="logo-name" style="font-family: Georgia, serif; font-size: 2.1rem; font-weight: 700; color: #F8F6F0; letter-spacing: 0.12em;">KAYEN</div>
+            <div style="width:30px; height:1px; background:#E8A838;"></div>
+          </div>
+          <div class="logo-descriptor" style="color:#C5C8F0; font-size:0.6rem; letter-spacing:0.28em; margin-top:8px;">HELADERÍA · DESDE 20XX</div>
+        </div>
+      </div>
+      <div>
+        <span class="typo-tag">Display: Bebas Neue + Cormorant mix</span>
+        <span class="typo-tag">Alternativa: Cabinet Grotesk Bold</span>
+        <span class="typo-tag">Apoyo: Plus Jakarta Sans</span>
+      </div>
+      <div class="premium-meter">
+        <div class="premium-label">Premium ←→ Approachable</div>
+        <div class="meter-bar"><div class="meter-fill" style="width:85%; background: linear-gradient(90deg, #3D3F8C, #E8A838);"></div></div>
+        <div class="meter-ticks"><span>Artesanal</span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;●</span><span>Luxury</span></div>
+      </div>
+      <p style="font-size:0.82rem; color:#666; margin-top:8px;">Nadie en el rubro usa índigo. El contraste índigo + miel es dramático y memorable. Máximo impacto para stands, ferias y presentaciones B2B.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- REFERENCIAS -->
+<h2>Referencias Clave Analizadas</h2>
+
+<div class="ref-card">
+  <h4>Ciò Gelato (Italia)</h4>
+  <p>Badge hexagonal suave con serif redondeado. Colores: teal o mostaza. Filosofía: "deliberate quality through minimal visual language." Aprendizaje: forma geométrica simple = lectura B2B instantánea.</p>
+</div>
+<div class="ref-card">
+  <h4>Mavero Gelato</h4>
+  <p>Navy profundo + turquesa + crema. Logo: M formada con dos espirales. Filosofía: "playful without being childish. Modern without feeling sterile." Aprendizaje: el navy da credibilidad; el acento dice alimento.</p>
+</div>
+<div class="ref-card">
+  <h4>Van Leeuwen (NYC — Pentagram)</h4>
+  <p>Sofia Pro sans-serif. Pastel ice cream tones por sabor. "Minimal graphic elements — the logo and a decisive color palette." Aprendizaje: el color hace el trabajo, no la ilustración.</p>
+</div>
+<div class="ref-card">
+  <h4>Lega Sweet Shop (Zulbera)</h4>
+  <p>Brown oscuro #3F2323 + blanco. Plus Jakarta Sans. Objetivo: "a real place, not a chain." Aprendizaje: 3 colores muy contenidos pueden funcionar perfectamente.</p>
+</div>
+<div class="ref-card">
+  <h4>Crema Lab Gelato / MJÖLK Eismanufaktur</h4>
+  <p>Escandinavo minimalista, orgánico, hand-crafted. Aprendizaje: lo artesanal no necesita look rústico — puede ser limpio y contemporáneo.</p>
+</div>
+
+<!-- PATTERNS -->
+<h2>Patterns & Anti-Patterns</h2>
+
+<div class="pattern-grid">
+  <div class="pattern-box good">
+    <h4>✓ HACER</h4>
+    <ul>
+      <li>Máx. 3 colores en el logo principal</li>
+      <li>Una tipografía display + una de apoyo</li>
+      <li>Descriptor más pequeño/ligero que el nombre</li>
+      <li>Forma geométrica simple como contenedor</li>
+      <li>Color primario define personalidad; acento define energía</li>
+    </ul>
+  </div>
+  <div class="pattern-box bad">
+    <h4>✗ EVITAR</h4>
+    <ul>
+      <li>Pasteles brillantes tipo app de delivery</li>
+      <li>Cucuruchos/helados genéricos en el logo</li>
+      <li>Scripts ilegibles en small sizes</li>
+      <li>Degradados en el logo principal</li>
+      <li>Más de 4 colores en la identidad primaria</li>
+    </ul>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- FUENTES -->
+<h2>Fuentes</h2>
+<ul class="sources">
+  <li><a href="https://www.designrush.com/best-designs/logo/cio-gelato-logo-design">Ciò Gelato Logo Design Analysis — DesignRush</a></li>
+  <li><a href="https://www.mikeadv.com/blog/mavero-behind-the-scenes-of-a-bold-gelato-brand/">Mavero: Behind the Scenes of a Bold Gelato Brand — MIKEADV</a></li>
+  <li><a href="https://www.pentagram.com/work/van-leeuwen">Van Leeuwen Brand Identity — Pentagram</a></li>
+  <li><a href="https://zulbera.com/work/lega-branding/">Lega Brand Identity — Zulbera Studio</a></li>
+  <li><a href="https://thecolorpalettestudio.com/blogs/color-palettes/sweet-sophistication-a-gelato-inspired-color-palette-for-modern-brand-design">Sweet Sophistication: Gelato Color Palette — The Color Palette Studio</a></li>
+  <li><a href="https://worldbranddesign.com/gas-rocket-agency-craft-authenticity-with-gelato-branding-of-crema-lab/">Crema Lab Gelato Branding — World Brand Design Society</a></li>
+  <li><a href="https://99designs.com/inspiration/branding/gelato">Gelato Branding Ideas 2025 — 99designs</a></li>
+  <li><a href="https://99designs.com/inspiration/branding/ice-cream">Ice Cream Branding Ideas 2026 — 99designs</a></li>
+</ul>
+
+<div style="margin-top:48px; padding:20px; background:#F0EBE0; border-radius:12px; font-size:0.85rem; color:#5C4033;">
+  <strong>Próximos pasos sugeridos:</strong><br>
+  1. Elegí una dirección (o combinación de elementos de varias)<br>
+  2. Corremos <code>/lazyweb-design-improve</code> sobre el sitio actual aplicando la paleta elegida<br>
+  3. Generamos mockups del logo con tipografías reales vía Google Fonts o Adobe Fonts
+</div>
+
+</body>
+</html>
