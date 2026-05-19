@@ -19,6 +19,19 @@ You can also use this single deploy command instead:
 
 - Deploy command: `npm run deploy`
 
+## Repository workaround
+
+This repository also commits the `.open-next/` output as a fallback for Workers Builds projects that are currently configured with:
+
+- Build command: empty
+- Deploy command: `npx wrangler deploy`
+
+With `.open-next/worker.js` and `.open-next/.build/open-next.config.mjs` already present in git, `wrangler deploy` can run without first generating the OpenNext output.
+
+This is a workaround for misconfigured Workers Builds, not the preferred long-term setup. If application code changes, rebuild OpenNext before pushing:
+
+- `npx opennextjs-cloudflare build`
+
 ## Why this is required
 
 `wrangler.jsonc` includes:
