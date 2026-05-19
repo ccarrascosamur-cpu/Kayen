@@ -7,14 +7,15 @@ import Image from 'next/image'
 export default function HeroSection() {
   return (
     <section id="top" className="relative bg-[#2D1F14] overflow-hidden">
-      {/* Imagen de fondo tipo referencia */}
+      {/* Video de fondo */}
       <div className="absolute inset-0">
-        <Image
-          src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=1200&q=75&auto=format&fit=crop"
-          alt="Helado artesanal Kayen"
-          fill
-          className="object-cover opacity-30"
-          priority
+        <video
+          src="/videos/hero.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#2D1F14] via-[#2D1F14]/80 to-transparent" />
       </div>
