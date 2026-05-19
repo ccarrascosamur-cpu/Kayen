@@ -94,7 +94,7 @@ export default function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             onSubmit={handleSubmit}
-            className="rounded-2xl border border-[#F5EFE0]/10 bg-[#F5EFE0]/5 p-6 md:p-8"
+            className="rounded-2xl border border-[#F5EFE0]/10 bg-[#3a2a1e] p-6 md:p-8"
           >
             {submitted && (
               <div className="mb-5 flex items-center gap-3 rounded-xl border border-green-400/30 bg-green-400/10 px-4 py-3 text-sm text-green-300">
@@ -111,7 +111,7 @@ export default function ContactSection() {
                 value={formData.nombre}
                 onChange={handleChange}
                 required
-                className="w-full rounded-xl border border-[#F5EFE0]/10 bg-[#F5EFE0]/8 px-4 py-3 text-sm text-[#F5EFE0] placeholder:text-[#F5EFE0]/40 outline-none focus:border-[#C67B3A] transition-smooth"
+                className="w-full rounded-xl border border-[#F5EFE0]/15 bg-[#2D1F14] px-4 py-3 text-sm text-[#F5EFE0] placeholder:text-[#F5EFE0]/40 outline-none focus:border-[#C67B3A] transition-smooth"
               />
               <input
                 type="text"
@@ -120,7 +120,7 @@ export default function ContactSection() {
                 value={formData.empresa}
                 onChange={handleChange}
                 required
-                className="w-full rounded-xl border border-[#F5EFE0]/10 bg-[#F5EFE0]/8 px-4 py-3 text-sm text-[#F5EFE0] placeholder:text-[#F5EFE0]/40 outline-none focus:border-[#C67B3A] transition-smooth"
+                className="w-full rounded-xl border border-[#F5EFE0]/15 bg-[#2D1F14] px-4 py-3 text-sm text-[#F5EFE0] placeholder:text-[#F5EFE0]/40 outline-none focus:border-[#C67B3A] transition-smooth"
               />
               <input
                 type="tel"
@@ -129,7 +129,7 @@ export default function ContactSection() {
                 value={formData.telefono}
                 onChange={handleChange}
                 required
-                className="w-full rounded-xl border border-[#F5EFE0]/10 bg-[#F5EFE0]/8 px-4 py-3 text-sm text-[#F5EFE0] placeholder:text-[#F5EFE0]/40 outline-none focus:border-[#C67B3A] transition-smooth"
+                className="w-full rounded-xl border border-[#F5EFE0]/15 bg-[#2D1F14] px-4 py-3 text-sm text-[#F5EFE0] placeholder:text-[#F5EFE0]/40 outline-none focus:border-[#C67B3A] transition-smooth"
               />
               <input
                 type="email"
@@ -138,7 +138,7 @@ export default function ContactSection() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full rounded-xl border border-[#F5EFE0]/10 bg-[#F5EFE0]/8 px-4 py-3 text-sm text-[#F5EFE0] placeholder:text-[#F5EFE0]/40 outline-none focus:border-[#C67B3A] transition-smooth"
+                className="w-full rounded-xl border border-[#F5EFE0]/15 bg-[#2D1F14] px-4 py-3 text-sm text-[#F5EFE0] placeholder:text-[#F5EFE0]/40 outline-none focus:border-[#C67B3A] transition-smooth"
               />
             </div>
 
@@ -148,7 +148,7 @@ export default function ContactSection() {
               value={formData.mensaje}
               onChange={handleChange}
               rows={4}
-              className="mt-4 w-full rounded-xl border border-[#F5EFE0]/10 bg-[#F5EFE0]/8 px-4 py-3 text-sm text-[#F5EFE0] placeholder:text-[#F5EFE0]/40 outline-none focus:border-[#C67B3A] transition-smooth resize-none"
+              className="mt-4 w-full rounded-xl border border-[#F5EFE0]/15 bg-[#2D1F14] px-4 py-3 text-sm text-[#F5EFE0] placeholder:text-[#F5EFE0]/40 outline-none focus:border-[#C67B3A] transition-smooth resize-none"
             />
 
             <button

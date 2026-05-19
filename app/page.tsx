@@ -5,6 +5,7 @@ import HeroSection from '../components/HeroSection'
 import AboutSection from '../components/AboutSection'
 import ProcessSection from '../components/ProcessSection'
 import PlusSection from '../components/PlusSection'
+import MediaSection from '../components/MediaSection'
 import ContactSection from '../components/ContactSection'
 import Navigation from '../components/Navigation'
 import FloatingWhatsApp from '../components/FloatingWhatsApp'
@@ -20,6 +21,7 @@ export default function Home() {
         <AboutSection />
         <ProcessSection />
         <PlusSection />
+        <MediaSection />
         <ContactSection />
       </main>
 
