@@ -21,7 +21,7 @@ export default function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    const message = `Hola, soy ${formData.nombre} de ${formData.empresa}.\nTel: ${formData.telefono}\nEmail: ${formData.email}\n\n${formData.mensaje}`
+    const message = `Hola, mi nombre es ${formData.nombre} y le escribo desde ${formData.empresa}.\nTeléfono: ${formData.telefono}\nCorreo electrónico: ${formData.email}\n\n${formData.mensaje}`
     const whatsappURL = `https://wa.me/?text=${encodeURIComponent(message)}`
     window.open(whatsappURL, '_blank')
     setSubmitted(true)
@@ -99,7 +99,7 @@ export default function ContactSection() {
             {submitted && (
               <div className="mb-5 flex items-center gap-3 rounded-xl border border-green-400/30 bg-green-400/10 px-4 py-3 text-sm text-green-300">
                 <CheckCircle size={18} weight="fill" />
-                <span>¡Mensaje enviado! Te contactaremos por WhatsApp.</span>
+                <span>Mensaje enviado. Nos pondremos en contacto por WhatsApp.</span>
               </div>
             )}
 
@@ -107,7 +107,7 @@ export default function ContactSection() {
               <input
                 type="text"
                 name="nombre"
-                placeholder="Nombre"
+                placeholder="Nombre y apellido"
                 value={formData.nombre}
                 onChange={handleChange}
                 required
@@ -116,7 +116,7 @@ export default function ContactSection() {
               <input
                 type="text"
                 name="empresa"
-                placeholder="Nombre del negocio"
+                placeholder="Nombre de la empresa"
                 value={formData.empresa}
                 onChange={handleChange}
                 required
@@ -134,7 +134,7 @@ export default function ContactSection() {
               <input
                 type="email"
                 name="email"
-                placeholder="Email"
+                placeholder="Correo electrónico"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -144,7 +144,7 @@ export default function ContactSection() {
 
             <textarea
               name="mensaje"
-              placeholder="¿Qué necesitás? Contanos sobre tu negocio..."
+              placeholder="¿En qué podemos ayudarle? Cuéntenos sobre su negocio..."
               value={formData.mensaje}
               onChange={handleChange}
               rows={4}

@@ -35,6 +35,10 @@ export default function Home() {
                 src="/logo-kayen.png"
                 alt="Kayen"
                 className="h-12 w-auto object-contain"
+                style={{
+                  filter:
+                    'brightness(0) saturate(100%) invert(10%) sepia(18%) saturate(1378%) hue-rotate(343deg) brightness(93%) contrast(92%)',
+                }}
               />
             </div>
 
@@ -68,7 +72,7 @@ export default function Home() {
           </div>
 
           <div className="mt-8 pt-6 border-t border-[#C67B3A]/10 text-center text-xs text-[#2D1F14]/40 space-y-1">
-            <p>© 2025 Kayen. Todos los derechos reservados.</p>
+            <p>© 2026 Kayen. Todos los derechos reservados.</p>
             <p>
               Sitio desarrollado por{' '}
               <a
