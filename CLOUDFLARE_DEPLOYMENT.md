@@ -19,18 +19,23 @@ You can also use this single deploy command instead:
 
 - Deploy command: `npm run deploy`
 
-## Repository workaround
+## Repository-side fix for Workers Builds
 
-This repository also commits the `.open-next/` output as a fallback for Workers Builds projects that are currently configured with:
+This repository uses:
 
-- Build command: empty
+- `postinstall: opennextjs-cloudflare build`
+
+Workers Builds always runs `npm clean-install` before `npx wrangler deploy`. Running the OpenNext build in `postinstall` ensures the deploy step can find:
+
+- `.open-next/.build/open-next.config.edge.mjs`
+- `.open-next/worker.js`
+
+This avoids depending on the dashboard `Build command` for the specific OpenNext compiled-config error.
+
+Even with this fix, the preferred Cloudflare setup is still:
+
+- Build command: `npx opennextjs-cloudflare build`
 - Deploy command: `npx wrangler deploy`
-
-With `.open-next/worker.js` and `.open-next/.build/open-next.config.mjs` already present in git, `wrangler deploy` can run without first generating the OpenNext output.
-
-This is a workaround for misconfigured Workers Builds, not the preferred long-term setup. If application code changes, rebuild OpenNext before pushing:
-
-- `npx opennextjs-cloudflare build`
 
 ## Why this is required
 
