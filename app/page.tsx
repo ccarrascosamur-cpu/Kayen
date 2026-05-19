@@ -34,7 +34,7 @@ export default function Home() {
               <img
                 src="/logo-kayen.png"
                 alt="Kayen"
-                className="h-8 w-auto object-contain"
+                className="h-12 w-auto object-contain"
               />
             </div>
 
