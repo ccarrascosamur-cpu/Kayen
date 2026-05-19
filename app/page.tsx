@@ -72,7 +72,7 @@ export default function Home() {
             <p>
               Sitio desarrollado por{' '}
               <a
-                href="https://emmagination.com"
+                href="https://emmagination.cl"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-[#C67B3A] transition-smooth underline"
