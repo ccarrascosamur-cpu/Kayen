@@ -22,7 +22,7 @@ export default function Navigation() {
           <img
             src="/logo-kayen.png"
             alt="Kayen"
-            className="h-14 w-auto object-contain"
+            className="h-16 w-auto object-contain"
           />
         </a>
 
