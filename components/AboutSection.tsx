@@ -39,7 +39,7 @@ export default function AboutSection() {
           >
             <span className="section-label">Quiénes somos</span>
             <h2 className="mt-4 font-display text-3xl md:text-4xl leading-tight text-[#2D1F14]">
-              Sabor artesanal para tu negocio.
+              Sabor artesanal para su negocio.
             </h2>
             <p className="mt-5 text-base leading-7 text-[#2D1F14]/70">
               Kayen es una heladería artesanal B2B que combina tradición y elegancia, 

@@ -6,7 +6,7 @@ import { WhatsappLogo } from '@phosphor-icons/react'
 export default function FloatingWhatsApp() {
   return (
     <motion.a
-      href="https://wa.me/1234567890"
+      href="https://wa.me"
       target="_blank"
       rel="noopener noreferrer"
       initial={{ scale: 0, opacity: 0 }}

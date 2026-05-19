@@ -20,7 +20,7 @@ const steps = [
     icon: Truck,
     step: '03',
     title: 'Despacho con vehículos equipados',
-    desc: 'Transportamos con vehículos altamente equipados para mantener el producto en óptimas condiciones hasta tu negocio.',
+    desc: 'Transportamos con vehículos altamente equipados para mantener el producto en óptimas condiciones hasta su negocio.',
   },
 ]
 
@@ -36,7 +36,7 @@ export default function ProcessSection() {
         >
           <span className="section-label">Nuestro proceso</span>
           <h2 className="mt-4 font-display text-3xl md:text-4xl leading-tight text-[#2D1F14]">
-            De nuestra fábrica a tu negocio.
+            De nuestra fábrica a su negocio.
           </h2>
           <p className="mt-4 text-base leading-7 text-[#2D1F14]/70">
             Un proceso cuidadosamente diseñado para que recibas el mejor producto, 

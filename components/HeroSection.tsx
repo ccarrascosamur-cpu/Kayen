@@ -28,7 +28,7 @@ export default function HeroSection() {
             transition={{ duration: 0.5 }}
             className="section-label text-[#C67B3A]"
           >
-            Helados artesanales para tu negocio
+            Helados artesanales para su negocio
           </motion.span>
 
           <motion.h1
@@ -46,7 +46,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-6 text-lg leading-8 text-[#F5EFE0]/90 max-w-lg drop-shadow-md"
           >
-            Sabor artesanal para tu negocio. Sostenible, elevado y texturizado.
+            Sabor artesanal para su negocio. Sostenible, elevado y texturizado.
           </motion.p>
 
           <motion.div
@@ -63,7 +63,7 @@ export default function HeroSection() {
               <ArrowRight size={16} weight="bold" />
             </a>
             <a
-              href="https://wa.me/1234567890"
+              href="https://wa.me"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border-2 border-[#F5EFE0] px-6 py-3.5 text-sm font-semibold text-[#F5EFE0] hover:bg-[#F5EFE0] hover:text-[#2D1F14] transition-smooth"

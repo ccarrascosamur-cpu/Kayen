@@ -12,7 +12,7 @@ const plusItems = [
   {
     icon: Truck,
     title: 'Distribución propia',
-    desc: 'No dependemos de terceros. Nuestros vehículos llegan a tu negocio con puntualidad.',
+    desc: 'No dependemos de terceros. Nuestros vehículos llegan a su negocio con puntualidad.',
   },
   {
     icon: Clock,
@@ -27,7 +27,7 @@ const plusItems = [
   {
     icon: Package,
     title: 'Formatos flexibles',
-    desc: 'Disponibles en distintos formatos y volúmenes según las necesidades de tu negocio.',
+    desc: 'Disponibles en distintos formatos y volúmenes según las necesidades de su negocio.',
   },
   {
     icon: Headphones,
@@ -51,7 +51,7 @@ export default function PlusSection() {
             Lo que nos diferencia.
           </h2>
           <p className="mt-4 text-base leading-7 text-[#2D1F14]/70">
-            Más que un proveedor, somos un aliado para que tu negocio crezca 
+            Más que un proveedor, somos un aliado para que su negocio crezca 
             con un producto que destaca.
           </p>
         </motion.div>

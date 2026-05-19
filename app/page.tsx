@@ -57,7 +57,7 @@ export default function Home() {
                 <InstagramLogo size={18} weight="fill" />
               </a>
               <a
-                href="https://wa.me/1234567890"
+                href="https://wa.me"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-[#2D1F14]/15 text-[#2D1F14] hover:bg-[#2D1F14] hover:text-[#F5EFE0] transition-smooth"

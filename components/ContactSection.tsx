@@ -22,7 +22,7 @@ export default function ContactSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     const message = `Hola, soy ${formData.nombre} de ${formData.empresa}.\nTel: ${formData.telefono}\nEmail: ${formData.email}\n\n${formData.mensaje}`
-    const whatsappURL = `https://wa.me/1234567890?text=${encodeURIComponent(message)}`
+    const whatsappURL = `https://wa.me/?text=${encodeURIComponent(message)}`
     window.open(whatsappURL, '_blank')
     setSubmitted(true)
     setTimeout(() => {
@@ -43,16 +43,16 @@ export default function ContactSection() {
           >
             <span className="section-label text-[#C67B3A]">Contacto</span>
             <h2 className="mt-4 font-display text-3xl md:text-4xl leading-tight text-[#F5EFE0]">
-              Hablemos de tu negocio.
+              Hablemos de su negocio.
             </h2>
             <p className="mt-5 text-base leading-7 text-[#F5EFE0]/65">
-              ¿Querés ofrecer helados artesanales de calidad en tu negocio? 
-              Escribinos y te ayudamos a elegir el surtido ideal.
+              ¿Quiere ofrecer helados artesanales de calidad en su negocio?
+              Escríbanos y le ayudamos a elegir el surtido ideal.
             </p>
 
             <div className="mt-8 space-y-5">
               <a
-                href="https://wa.me/1234567890"
+                href="https://wa.me"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 group"
@@ -62,7 +62,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-sm text-[#F5EFE0]/50">WhatsApp</p>
-                  <p className="text-[#F5EFE0]">+54 9 11 1234 5678</p>
+                  <p className="text-[#F5EFE0]">Consultar por WhatsApp</p>
                 </div>
               </a>
 
@@ -82,7 +82,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-sm text-[#F5EFE0]/50">Ubicación</p>
-                  <p className="text-[#F5EFE0]">Buenos Aires, Argentina</p>
+                  <p className="text-[#F5EFE0]">Consultar ubicación</p>
                 </div>
               </div>
             </div>
@@ -107,7 +107,7 @@ export default function ContactSection() {
               <input
                 type="text"
                 name="nombre"
-                placeholder="Tu nombre"
+                placeholder="Nombre"
                 value={formData.nombre}
                 onChange={handleChange}
                 required

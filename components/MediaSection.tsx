@@ -26,7 +26,7 @@ const mediaItems = [
     type: 'image',
     src: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=800&q=75&auto=format&fit=crop',
     title: 'Presentación elegante',
-    desc: 'Diseñado para destacar en tu negocio.',
+    desc: 'Diseñado para destacar en su negocio.',
   },
 ]
 
@@ -117,13 +117,13 @@ export default function MediaSection() {
             </div>
             <div className="p-8 md:p-10 flex flex-col justify-center">
               <span className="section-label">Destacado</span>
-              <h3 className="mt-3 font-display text-2xl text-[#2D1F14]">Conocé nuestra fábrica</h3>
+              <h3 className="mt-3 font-display text-2xl text-[#2D1F14]">Conozca nuestra fábrica</h3>
               <p className="mt-3 text-base leading-7 text-[#2D1F14]/70">
                 Un recorrido por nuestra planta de producción donde cada helado nace con dedicación 
                 y los más altos estándares de calidad.
               </p>
               <p className="mt-4 text-sm text-[#2D1F14]/50">
-                Reemplazá esta imagen por un video de YouTube o un archivo .mp4.
+                Reemplace esta imagen por un video de YouTube o un archivo .mp4.
               </p>
             </div>
           </div>
