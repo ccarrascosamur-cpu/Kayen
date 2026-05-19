@@ -18,9 +18,12 @@ export default function Navigation() {
     <nav className="sticky top-0 z-50 bg-[#2D1F14]">
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
-        <a href="#top" className="flex flex-col leading-none">
-          <span className="font-display text-3xl tracking-[0.04em] text-[#F5EFE0]">Kayen</span>
-          <span className="text-[0.6rem] uppercase tracking-[0.25em] text-[#C67B3A] mt-0.5">Helados artesanales · B2B</span>
+        <a href="#top" className="flex items-center gap-2">
+          <img
+            src="/logo-kayen.png"
+            alt="Kayen"
+            className="h-10 w-auto object-contain"
+          />
         </a>
 
         {/* Desktop nav */}

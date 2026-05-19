@@ -31,8 +31,11 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             {/* Logo */}
             <div className="flex flex-col items-center md:items-start">
-              <span className="font-display text-2xl text-[#2D1F14]">Kayen</span>
-              <span className="text-[0.6rem] uppercase tracking-[0.2em] text-[#9C5A22]">Helados artesanales · B2B</span>
+              <img
+                src="/logo-kayen.png"
+                alt="Kayen"
+                className="h-8 w-auto object-contain"
+              />
             </div>
 
             {/* Links */}
@@ -64,8 +67,19 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-8 pt-6 border-t border-[#C67B3A]/10 text-center text-xs text-[#2D1F14]/40">
+          <div className="mt-8 pt-6 border-t border-[#C67B3A]/10 text-center text-xs text-[#2D1F14]/40 space-y-1">
             <p>© 2025 Kayen. Todos los derechos reservados.</p>
+            <p>
+              Sitio desarrollado por{' '}
+              <a
+                href="https://emmagination.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#C67B3A] transition-smooth underline"
+              >
+                Emmagination
+              </a>
+            </p>
           </div>
         </div>
       </footer>
